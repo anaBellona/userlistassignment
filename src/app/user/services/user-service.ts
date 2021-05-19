@@ -99,14 +99,7 @@ export const users: User[] = [
         firstname: 'Christian',
         lastname: 'Williams',
         age: '41'
-    },
-    {
-        id: 10,
-        img: 'https://source.unsplash.com/collection/8669816/100x100?sig=21',
-        firstname: 'Williams',
-        lastname: 'Christian',
-        age: '41'
-    },
+    }
 ]
 
 function tap(arg0: (data: any) => void): any {
