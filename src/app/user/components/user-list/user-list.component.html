@@ -1,0 +1,47 @@
+<layout-public>
+    <div class="codeflair-assignment">
+        <section class="user-filter">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="filter" class="form-label">Filter Users by Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <input type="text" [(ngModel)]='userFilter' class="form-control" id="filter"
+                        placeholder="Filter Users..." />
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary ml-2">
+                        Users <span class="badge bg-secondary">{{filteredUsers.length}}</span>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-primary" (click)="sortByAgeClick()">Sort Users by Age</button>
+            </div>
+        </section>
+
+        <div class="user-list">
+            <div class="row card-group">
+                <div class="col col-xl-2" *ngFor="let user of filteredUsers">
+                    <div class="card bg-light mb-3 " style="width: 14rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user.firstname + " " + user.lastname }}</h5>
+                            <div class="card-text">
+                                <div><img class="card-img-top" [src]="user.img" alt="Card image"></div>
+                                <div class="user__age">Age: {{user.age}}</div>
+                            </div>
+                            <button href="#" class="btn btn-outline-primary mt-2" (click)="showMore(user)">Show
+                                Details</button>
+                            <user-view [user]="user"></user-view>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="filteredUsers.length === 0">
+                Results are empty
+            </div>
+        </div>
+    </div>
+</layout-public>

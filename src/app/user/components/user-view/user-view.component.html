@@ -1,0 +1,4 @@
+<div [@showMore]="user.showMore ? 'show' : 'hide'" class="card-text mt-2">
+    <div [@theChildAnimation]="user.showMore ? 'show' : 'hide'" class="name">{{ user.firstname + " " + user.lastname }}</div>
+    <div [@theChildAnimation]="user.showMore ? 'show' : 'hide'" class="user__age">Age: {{user.age}}</div>
+</div>
